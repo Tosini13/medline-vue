@@ -31,8 +31,21 @@ pnpm install
 pnpm dev
 ```
 
+or use the docker to run the development server.
+
+```sh
+docker compose -f docker-compose.dev.yml up --build
+```
+
 ### Compile and Minify for Production
 
 ```sh
 pnpm build
+```
+
+or use the Dockerfile to build the production image.
+
+```sh
+docker build -t medline-vue -f Dockerfile .
+docker run -p 80:80 medline-vue
 ```
