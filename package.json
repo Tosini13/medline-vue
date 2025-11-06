@@ -17,6 +17,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
     "daisyui": "^5.4.5",
+    "firebase": "^12.5.0",
     "tailwindcss": "^4.1.17",
     "vue": "^3.5.22"
   },
