@@ -1,5 +1,5 @@
 import { EventType } from "@/types";
-import { getEventDocumentPath } from '@/utils/utils'
+import { getEventDocumentPath } from '@/utils/services-utils'
 import {
   addDoc,
   collection,

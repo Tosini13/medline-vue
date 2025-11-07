@@ -1,5 +1,5 @@
 import { DocumentType } from "@/types";
-import { formatFileName } from "@/utils/utils";
+import { formatFileName } from '@/utils/services-utils'
 import {
   FirebaseStorage,
   ref,

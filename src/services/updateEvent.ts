@@ -1,5 +1,5 @@
 import { EventType } from "@/types";
-import { getEventDocumentPath } from "@/utils/utils";
+import { getEventDocumentPath } from '@/utils/services-utils'
 import { Firestore, doc, updateDoc } from "firebase/firestore/lite";
 import { FirebaseStorage, UploadTaskSnapshot } from "firebase/storage";
 import { deleteDocument } from "./deleteDocument";
