@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AppLayout from '@/components/layout/AppLayout.vue'
 import AppButton from '@/components/ui/AppButton.vue'
+import { Button } from '@/components/ui/button'
 import Card from '@/components/ui/Card.vue'
 import LoadingSpinner from '@/components/ui/LoadingSpinner.vue'
 import { getAPI } from '@/services/mockData'
@@ -34,6 +35,9 @@ onMounted(async () => {
         <AppButton @click="router.push('/issues/new')">
           ➕ New Issue
         </AppButton>
+        <Button @click="router.push('/issues/new')">
+          ➕ New Issue 2
+        </Button>
       </div>
 
       <LoadingSpinner v-if="loading" text="Loading your health issues..." />

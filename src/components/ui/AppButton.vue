@@ -45,9 +45,9 @@ const buttonClasses = computed(() => {
 </script>
 
 <template>
-  <button :class="buttonClasses" :disabled="disabled || loading">
+  <Button :class="buttonClasses" :disabled="disabled || loading">
     <span v-if="loading" class="loading loading-spinner loading-sm mr-2"></span>
     <slot />
-  </button>
+  </Button>
 </template>
 
