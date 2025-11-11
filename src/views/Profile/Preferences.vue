@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AppButton from '@/components/ui/AppButton.vue'
-import GlassCard from '@/components/ui/GlassCard.vue'
+import Card from '@/components/ui/Card.vue'
 import { ref } from 'vue'
 
 const preferences = ref({
@@ -21,7 +21,7 @@ const handleSave = async () => {
 </script>
 
 <template>
-  <GlassCard>
+  <Card>
     <h2 class="text-2xl font-semibold mb-6">Preferences</h2>
 
     <form @submit.prevent="handleSave" class="space-y-6">
@@ -53,7 +53,7 @@ const handleSave = async () => {
         <label class="label">
           <span class="label-text font-semibold">Language</span>
         </label>
-        <select v-model="preferences.language" class="select select-bordered w-full glass">
+        <select v-model="preferences.language" class="select select-bordered w-full ">
           <option value="en">English</option>
           <option value="es">Spanish</option>
           <option value="fr">French</option>
@@ -65,7 +65,7 @@ const handleSave = async () => {
         <label class="label">
           <span class="label-text font-semibold">Timezone</span>
         </label>
-        <select v-model="preferences.timezone" class="select select-bordered w-full glass">
+        <select v-model="preferences.timezone" class="select select-bordered w-full ">
           <option value="America/New_York">Eastern Time</option>
           <option value="America/Chicago">Central Time</option>
           <option value="America/Denver">Mountain Time</option>
@@ -79,6 +79,6 @@ const handleSave = async () => {
         </AppButton>
       </div>
     </form>
-  </GlassCard>
+  </Card>
 </template>
 

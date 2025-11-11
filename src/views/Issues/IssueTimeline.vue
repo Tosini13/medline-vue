@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import AppButton from '@/components/ui/AppButton.vue'
+import Card from '@/components/ui/Card.vue'
 import EventTypeBadge from '@/components/ui/EventTypeBadge.vue'
-import GlassCard from '@/components/ui/GlassCard.vue'
 import LoadingSpinner from '@/components/ui/LoadingSpinner.vue'
 import { getAPI } from '@/services/mockData'
 import type { EventType, LineType } from '@/types'
@@ -33,7 +33,7 @@ const sortedEvents = computed(() => {
 </script>
 
 <template>
-  <GlassCard>
+  <Card>
     <div class="flex justify-between items-center mb-6">
       <h2 class="text-2xl font-semibold">Timeline</h2>
       <AppButton @click="router.push(`/issues/${line.id}/events/new`)">
@@ -63,7 +63,7 @@ const sortedEvents = computed(() => {
         >
           <!-- Timeline dot -->
           <div
-            class="relative z-10 w-16 h-16 rounded-full glass flex items-center justify-center flex-shrink-0"
+            class="relative z-10 w-16 h-16 rounded-full  flex items-center justify-center flex-shrink-0"
             :style="{ backgroundColor: line.color + '40' }"
           >
             <div
@@ -73,7 +73,7 @@ const sortedEvents = computed(() => {
           </div>
 
           <!-- Event content -->
-          <div class="flex-1 glass-card p-4 cursor-pointer hover:shadow-lg transition-all" @click="router.push(`/issues/${line.id}/events/${event.id}`)">
+          <div class="flex-1 card p-4 cursor-pointer" @click="router.push(`/issues/${line.id}/events/${event.id}`)">
             <div class="flex justify-between items-start mb-2">
               <h3 class="text-xl font-semibold">{{ event.title }}</h3>
               <EventTypeBadge :type="event.type" />
@@ -83,12 +83,12 @@ const sortedEvents = computed(() => {
             </p>
             <p class="text-base-content/80">{{ event.description }}</p>
             <div v-if="event.documents && event.documents.length > 0" class="mt-2 flex gap-2">
-              <span class="badge badge-sm glass">📁 {{ event.documents.length }} document(s)</span>
+              <span class="badge badge-sm ">📁 {{ event.documents.length }} document(s)</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </GlassCard>
+  </Card>
 </template>
 

@@ -92,7 +92,7 @@ const tabs = [
       </div>
 
       <!-- Tabs -->
-      <div class="glass-card p-2">
+      <div class="card p-2">
         <div class="flex gap-2 overflow-x-auto">
           <AppButton
             v-for="tab in tabs"

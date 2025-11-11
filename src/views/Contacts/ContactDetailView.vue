@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import AppLayout from '@/components/layout/AppLayout.vue'
 import AppButton from '@/components/ui/AppButton.vue'
-import GlassCard from '@/components/ui/GlassCard.vue'
+import Card from '@/components/ui/Card.vue'
 import { ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
@@ -34,9 +34,9 @@ const contact = ref({
         <h1 class="text-4xl font-bold">{{ contact.name }}</h1>
       </div>
 
-      <GlassCard>
+      <Card>
         <div class="text-center mb-6">
-          <div class="w-24 h-24 rounded-full glass mx-auto mb-4 flex items-center justify-center text-4xl">
+          <div class="w-24 h-24 rounded-full  mx-auto mb-4 flex items-center justify-center text-4xl">
             👨‍⚕️
           </div>
           <h2 class="text-2xl font-semibold">{{ contact.role }}</h2>
@@ -70,7 +70,7 @@ const contact = ref({
             </AppButton>
           </div>
         </div>
-      </GlassCard>
+      </Card>
     </div>
   </AppLayout>
 </template>

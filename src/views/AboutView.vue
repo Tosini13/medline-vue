@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AppLayout from '@/components/layout/AppLayout.vue';
-import GlassCard from '@/components/ui/GlassCard.vue';
+import Card from '@/components/ui/Card.vue';
 </script>
 
 <template>
@@ -10,7 +10,7 @@ import GlassCard from '@/components/ui/GlassCard.vue';
         About Medline
       </h1>
 
-      <GlassCard>
+      <Card>
         <div class="space-y-6">
           <div>
             <h2 class="text-2xl font-semibold mb-4">Welcome to Medline</h2>
@@ -44,7 +44,7 @@ import GlassCard from '@/components/ui/GlassCard.vue';
             </p>
           </div>
         </div>
-      </GlassCard>
+      </Card>
     </div>
   </AppLayout>
 </template>

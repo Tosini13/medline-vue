@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AppButton from '@/components/ui/AppButton.vue'
-import GlassCard from '@/components/ui/GlassCard.vue'
+import Card from '@/components/ui/Card.vue'
 import { ref } from 'vue'
 
 const form = ref({
@@ -31,7 +31,7 @@ const handleDeleteAccount = () => {
 </script>
 
 <template>
-  <GlassCard>
+  <Card>
     <h2 class="text-2xl font-semibold mb-6">Account Settings</h2>
 
     <form @submit.prevent="handleSave" class="space-y-6">
@@ -42,7 +42,7 @@ const handleDeleteAccount = () => {
         <input
           v-model="form.email"
           type="email"
-          class="input input-bordered w-full glass"
+          class="input input-bordered w-full "
         />
       </div>
 
@@ -55,7 +55,7 @@ const handleDeleteAccount = () => {
         <input
           v-model="form.currentPassword"
           type="password"
-          class="input input-bordered w-full glass"
+          class="input input-bordered w-full "
         />
       </div>
 
@@ -66,7 +66,7 @@ const handleDeleteAccount = () => {
         <input
           v-model="form.newPassword"
           type="password"
-          class="input input-bordered w-full glass"
+          class="input input-bordered w-full "
         />
       </div>
 
@@ -77,7 +77,7 @@ const handleDeleteAccount = () => {
         <input
           v-model="form.confirmPassword"
           type="password"
-          class="input input-bordered w-full glass"
+          class="input input-bordered w-full "
         />
       </div>
 
@@ -96,6 +96,6 @@ const handleDeleteAccount = () => {
         Delete Account
       </AppButton>
     </div>
-  </GlassCard>
+  </Card>
 </template>
 

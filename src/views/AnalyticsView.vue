@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AppLayout from '@/components/layout/AppLayout.vue'
-import GlassCard from '@/components/ui/GlassCard.vue'
+import Card from '@/components/ui/Card.vue'
 import LoadingSpinner from '@/components/ui/LoadingSpinner.vue'
 import { getAPI } from '@/services/mockData'
 import { onMounted, ref } from 'vue'
@@ -54,41 +54,41 @@ onMounted(async () => {
       <LoadingSpinner v-if="loading" text="Loading analytics..." />
 
       <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <GlassCard>
+        <Card>
           <div class="text-center">
             <div class="text-4xl font-bold text-primary">{{ stats.totalIssues }}</div>
             <div class="text-base-content/70 mt-2">Total Issues</div>
           </div>
-        </GlassCard>
+        </Card>
 
-        <GlassCard>
+        <Card>
           <div class="text-center">
             <div class="text-4xl font-bold text-info">{{ stats.totalEvents }}</div>
             <div class="text-base-content/70 mt-2">Total Events</div>
           </div>
-        </GlassCard>
+        </Card>
 
-        <GlassCard>
+        <Card>
           <div class="text-center">
             <div class="text-4xl font-bold text-warning">{{ stats.upcomingAppointments }}</div>
             <div class="text-base-content/70 mt-2">Upcoming</div>
           </div>
-        </GlassCard>
+        </Card>
 
-        <GlassCard>
+        <Card>
           <div class="text-center">
             <div class="text-4xl font-bold text-success">{{ stats.recentTests }}</div>
             <div class="text-base-content/70 mt-2">Tests</div>
           </div>
-        </GlassCard>
+        </Card>
       </div>
 
-      <GlassCard>
+      <Card>
         <h2 class="text-2xl font-semibold mb-4">Coming Soon</h2>
         <p class="text-base-content/70">
           More detailed analytics and charts will be available in future updates.
         </p>
-      </GlassCard>
+      </Card>
     </div>
   </AppLayout>
 </template>

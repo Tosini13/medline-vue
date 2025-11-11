@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import AppLayout from '@/components/layout/AppLayout.vue'
 import AppButton from '@/components/ui/AppButton.vue'
+import Card from '@/components/ui/Card.vue'
 import EventTypeBadge from '@/components/ui/EventTypeBadge.vue'
-import GlassCard from '@/components/ui/GlassCard.vue'
 import LoadingSpinner from '@/components/ui/LoadingSpinner.vue'
 import { getAPI } from '@/services/mockData'
 import type { EventType, LineType } from '@/types'
@@ -53,7 +52,6 @@ const handleDelete = async () => {
 </script>
 
 <template>
-  <AppLayout>
     <div v-if="loading" class="py-8">
       <LoadingSpinner text="Loading event..." />
     </div>
@@ -66,7 +64,7 @@ const handleDelete = async () => {
         <h1 class="text-4xl font-bold">{{ event.title }}</h1>
       </div>
 
-      <GlassCard>
+      <Card>
         <div class="space-y-6">
           <div class="flex justify-between items-start">
             <div>
@@ -99,7 +97,7 @@ const handleDelete = async () => {
               <div
                 v-for="doc in event.documents"
                 :key="doc.path"
-                class="glass-dark p-4 rounded-lg flex items-center justify-between"
+                class="-dark p-4 rounded-lg flex items-center justify-between"
               >
                 <div class="flex items-center gap-3">
                   <span class="text-2xl">📄</span>
@@ -113,8 +111,7 @@ const handleDelete = async () => {
             </div>
           </div>
         </div>
-      </GlassCard>
+      </Card>
     </div>
-  </AppLayout>
 </template>
 

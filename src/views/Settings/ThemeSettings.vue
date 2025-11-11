@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AppButton from '@/components/ui/AppButton.vue'
-import GlassCard from '@/components/ui/GlassCard.vue'
+import Card from '@/components/ui/Card.vue'
 import { ref } from 'vue'
 
 const theme = ref({
@@ -19,7 +19,7 @@ const handleSave = async () => {
 </script>
 
 <template>
-  <GlassCard>
+  <Card>
     <h2 class="text-2xl font-semibold mb-6">Theme Settings</h2>
 
     <form @submit.prevent="handleSave" class="space-y-6">
@@ -27,7 +27,7 @@ const handleSave = async () => {
         <label class="label">
           <span class="label-text font-semibold">Theme Mode</span>
         </label>
-        <select v-model="theme.mode" class="select select-bordered w-full glass">
+        <select v-model="theme.mode" class="select select-bordered w-full ">
           <option value="light">Light</option>
           <option value="dark">Dark</option>
           <option value="auto">Auto (System)</option>
@@ -57,6 +57,6 @@ const handleSave = async () => {
         </AppButton>
       </div>
     </form>
-  </GlassCard>
+  </Card>
 </template>
 

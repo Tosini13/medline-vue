@@ -13,17 +13,18 @@ const props = withDefaults(
     outline: false,
   }
 )
+const { outline, variant, size } = props
 
 const badgeClasses = computed(() => {
   const base = 'badge transition-all'
   const variantClasses = {
-    primary: outline ? 'badge-outline badge-primary' : 'badge-primary glass',
-    secondary: outline ? 'badge-outline badge-secondary' : 'badge-secondary glass',
-    accent: outline ? 'badge-outline badge-accent' : 'badge-accent glass',
-    info: outline ? 'badge-outline badge-info' : 'badge-info glass',
-    success: outline ? 'badge-outline badge-success' : 'badge-success glass',
-    warning: outline ? 'badge-outline badge-warning' : 'badge-warning glass',
-    error: outline ? 'badge-outline badge-error' : 'badge-error glass',
+    primary: outline ? 'badge-outline badge-primary' : 'badge-primary',
+    secondary: outline ? 'badge-outline badge-secondary' : 'badge-secondary',
+    accent: outline ? 'badge-outline badge-accent' : 'badge-accent',
+    info: outline ? 'badge-outline badge-info' : 'badge-info',
+    success: outline ? 'badge-outline badge-success' : 'badge-success',
+    warning: outline ? 'badge-outline badge-warning' : 'badge-warning',
+    error: outline ? 'badge-outline badge-error' : 'badge-error',
   }
   const sizeClasses = {
     xs: 'badge-xs',
@@ -31,7 +32,7 @@ const badgeClasses = computed(() => {
     md: '',
     lg: 'badge-lg',
   }
-  return [base, variantClasses[props.variant], sizeClasses[props.size]].filter(Boolean).join(' ')
+  return [base, variantClasses[variant], sizeClasses[size]].filter(Boolean).join(' ')
 })
 </script>
 

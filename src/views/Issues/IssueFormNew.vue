@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import AppLayout from '@/components/layout/AppLayout.vue'
 import AppButton from '@/components/ui/AppButton.vue'
-import GlassCard from '@/components/ui/GlassCard.vue'
+import Card from '@/components/ui/Card.vue'
 import { getAPI } from '@/services/mockData'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
@@ -63,7 +63,7 @@ const handleSubmit = async () => {
         </h1>
       </div>
 
-      <GlassCard>
+      <Card>
         <form @submit.prevent="handleSubmit" class="space-y-6">
           <div>
             <label class="label">
@@ -72,7 +72,7 @@ const handleSubmit = async () => {
             <input
               v-model="form.title"
               type="text"
-              class="input input-bordered w-full glass"
+              class="input input-bordered w-full "
               placeholder="e.g., Diabetes Management"
               required
             />
@@ -84,7 +84,7 @@ const handleSubmit = async () => {
             </label>
             <textarea
               v-model="form.description"
-              class="textarea textarea-bordered w-full glass"
+              class="textarea textarea-bordered w-full "
               placeholder="Optional description"
               rows="4"
             ></textarea>
@@ -120,7 +120,7 @@ const handleSubmit = async () => {
             </AppButton>
           </div>
         </form>
-      </GlassCard>
+      </Card>
     </div>
   </AppLayout>
 </template>

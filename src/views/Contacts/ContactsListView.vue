@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import AppLayout from '@/components/layout/AppLayout.vue'
 import AppButton from '@/components/ui/AppButton.vue'
-import GlassCard from '@/components/ui/GlassCard.vue'
+import Card from '@/components/ui/Card.vue'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
@@ -47,13 +47,13 @@ const contacts = ref([
         </AppButton>
       </div>
 
-      <div v-if="contacts.length === 0" class="glass-card text-center py-12">
+      <div v-if="contacts.length === 0" class="card text-center py-12">
         <p class="text-xl mb-4">No contacts yet</p>
         <AppButton>Add Your First Contact</AppButton>
       </div>
 
       <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <GlassCard
+        <Card
           v-for="contact in contacts"
           :key="contact.id"
           hover
@@ -61,7 +61,7 @@ const contacts = ref([
           @click="router.push(`/contacts/${contact.id}`)"
         >
           <div class="text-center mb-4">
-            <div class="w-20 h-20 rounded-full glass mx-auto mb-3 flex items-center justify-center text-3xl">
+            <div class="w-20 h-20 rounded-full  mx-auto mb-3 flex items-center justify-center text-3xl">
               👨‍⚕️
             </div>
             <h3 class="text-xl font-semibold">{{ contact.name }}</h3>
@@ -72,7 +72,7 @@ const contacts = ref([
             <p><strong>Phone:</strong> {{ contact.phone }}</p>
             <p><strong>Email:</strong> {{ contact.email }}</p>
           </div>
-        </GlassCard>
+        </Card>
       </div>
     </div>
   </AppLayout>

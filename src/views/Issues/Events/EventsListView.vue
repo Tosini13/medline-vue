@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import AppButton from '@/components/ui/AppButton.vue'
+import Card from '@/components/ui/Card.vue'
 import EventTypeBadge from '@/components/ui/EventTypeBadge.vue'
-import GlassCard from '@/components/ui/GlassCard.vue'
 import LoadingSpinner from '@/components/ui/LoadingSpinner.vue'
 import { getAPI } from '@/services/mockData'
 import type { EventType, LineType } from '@/types'
@@ -37,7 +37,7 @@ import { computed } from 'vue'
 </script>
 
 <template>
-  <GlassCard>
+  <Card>
     <div class="flex justify-between items-center mb-6">
       <h2 class="text-2xl font-semibold">Events</h2>
       <AppButton @click="router.push(`/issues/${line.id}/events/new`)">
@@ -58,7 +58,7 @@ import { computed } from 'vue'
       <div
         v-for="event in sortedEvents"
         :key="event.id"
-        class="glass-dark p-4 rounded-lg cursor-pointer hover:shadow-lg transition-all"
+        class="-dark p-4 rounded-lg cursor-pointer hover:shadow-lg transition-all"
         @click="router.push(`/issues/${line.id}/events/${event.id}`)"
       >
         <div class="flex justify-between items-start mb-2">
@@ -70,10 +70,10 @@ import { computed } from 'vue'
         </p>
         <p class="text-base-content/80 mb-2">{{ event.description }}</p>
         <div v-if="event.documents && event.documents.length > 0" class="flex gap-2">
-          <span class="badge badge-sm glass">📁 {{ event.documents.length }} document(s)</span>
+          <span class="badge badge-sm ">📁 {{ event.documents.length }} document(s)</span>
         </div>
       </div>
     </div>
-  </GlassCard>
+  </Card>
 </template>
 

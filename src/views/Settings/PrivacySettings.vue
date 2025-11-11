@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AppButton from '@/components/ui/AppButton.vue'
-import GlassCard from '@/components/ui/GlassCard.vue'
+import Card from '@/components/ui/Card.vue'
 import { ref } from 'vue'
 
 const privacy = ref({
@@ -21,7 +21,7 @@ const handleSave = async () => {
 </script>
 
 <template>
-  <GlassCard>
+  <Card>
     <h2 class="text-2xl font-semibold mb-6">Privacy Settings</h2>
 
     <form @submit.prevent="handleSave" class="space-y-6">
@@ -89,6 +89,6 @@ const handleSave = async () => {
         </AppButton>
       </div>
     </form>
-  </GlassCard>
+  </Card>
 </template>
 

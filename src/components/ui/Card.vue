@@ -15,8 +15,7 @@ const paddingClasses = {
 <template>
   <div
     :class="[
-      'glass-card rounded-2xl transition-all duration-300',
-      hover !== false ? 'hover:shadow-xl hover:-translate-y-1' : '',
+      'card',
       paddingClasses[padding || 'md'],
     ]"
   >

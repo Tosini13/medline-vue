@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import AppLayout from '@/components/layout/AppLayout.vue'
 import AppButton from '@/components/ui/AppButton.vue'
-import GlassCard from '@/components/ui/GlassCard.vue'
+import Card from '@/components/ui/Card.vue'
 import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
@@ -24,7 +24,7 @@ const tabs = [
       </div>
 
       <!-- Tabs -->
-      <GlassCard padding="none">
+      <Card padding="none">
         <div class="flex gap-2 p-2">
           <AppButton
             v-for="tab in tabs"
@@ -37,7 +37,7 @@ const tabs = [
             {{ tab.name }}
           </AppButton>
         </div>
-      </GlassCard>
+      </Card>
 
       <!-- Child Route Content -->
       <RouterView />

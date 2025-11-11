@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AppButton from '@/components/ui/AppButton.vue'
-import GlassCard from '@/components/ui/GlassCard.vue'
+import Card from '@/components/ui/Card.vue'
 import { ref } from 'vue'
 
 const form = ref({
@@ -22,7 +22,7 @@ const handleSave = async () => {
 </script>
 
 <template>
-  <GlassCard>
+  <Card>
     <h2 class="text-2xl font-semibold mb-6">Health Information</h2>
 
     <form @submit.prevent="handleSave" class="space-y-6">
@@ -30,7 +30,7 @@ const handleSave = async () => {
         <label class="label">
           <span class="label-text font-semibold">Blood Type</span>
         </label>
-        <select v-model="form.bloodType" class="select select-bordered w-full glass">
+        <select v-model="form.bloodType" class="select select-bordered w-full ">
           <option>A+</option>
           <option>A-</option>
           <option>B+</option>
@@ -48,7 +48,7 @@ const handleSave = async () => {
         </label>
         <textarea
           v-model="form.allergies"
-          class="textarea textarea-bordered w-full glass"
+          class="textarea textarea-bordered w-full "
           placeholder="List any allergies"
           rows="3"
         ></textarea>
@@ -60,7 +60,7 @@ const handleSave = async () => {
         </label>
         <textarea
           v-model="form.medications"
-          class="textarea textarea-bordered w-full glass"
+          class="textarea textarea-bordered w-full "
           placeholder="List current medications"
           rows="3"
         ></textarea>
@@ -73,7 +73,7 @@ const handleSave = async () => {
         <input
           v-model="form.emergencyContact"
           type="text"
-          class="input input-bordered w-full glass"
+          class="input input-bordered w-full "
           placeholder="Name - Phone Number"
         />
       </div>
@@ -85,7 +85,7 @@ const handleSave = async () => {
         <input
           v-model="form.insurance"
           type="text"
-          class="input input-bordered w-full glass"
+          class="input input-bordered w-full "
           placeholder="Insurance Company - Policy Number"
         />
       </div>
@@ -96,6 +96,6 @@ const handleSave = async () => {
         </AppButton>
       </div>
     </form>
-  </GlassCard>
+  </Card>
 </template>
 

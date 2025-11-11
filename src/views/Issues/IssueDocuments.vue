@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import GlassCard from '@/components/ui/GlassCard.vue'
+import Card from '@/components/ui/Card.vue'
 import LoadingSpinner from '@/components/ui/LoadingSpinner.vue'
 import { getAPI } from '@/services/mockData'
 import type { DocumentType, EventType, LineType } from '@/types'
@@ -41,7 +41,7 @@ const allDocuments = computed(() => {
 </script>
 
 <template>
-  <GlassCard>
+  <Card>
     <h2 class="text-2xl font-semibold mb-6">Documents</h2>
 
     <LoadingSpinner v-if="loading" text="Loading documents..." />
@@ -55,10 +55,10 @@ const allDocuments = computed(() => {
       <div
         v-for="doc in allDocuments"
         :key="doc.path"
-        class="glass-dark p-4 rounded-lg flex items-center justify-between"
+        class="-dark p-4 rounded-lg flex items-center justify-between"
       >
         <div class="flex items-center gap-4">
-          <div class="w-12 h-12 rounded-lg glass flex items-center justify-center text-2xl">
+          <div class="w-12 h-12 rounded-lg  flex items-center justify-center text-2xl">
             📄
           </div>
           <div>
@@ -71,6 +71,6 @@ const allDocuments = computed(() => {
         </div>
       </div>
     </div>
-  </GlassCard>
+  </Card>
 </template>
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import AppLayout from '@/components/layout/AppLayout.vue'
 import AppButton from '@/components/ui/AppButton.vue'
-import GlassCard from '@/components/ui/GlassCard.vue'
+import Card from '@/components/ui/Card.vue'
 import LoadingSpinner from '@/components/ui/LoadingSpinner.vue'
 import { getAPI } from '@/services/mockData'
 import type { LineType } from '@/types'
@@ -51,7 +51,7 @@ const handleDelete = async (lineId: string, event: Event) => {
 
       <LoadingSpinner v-if="loading" text="Loading issues..." />
 
-      <div v-else-if="lines.length === 0" class="glass-card text-center py-12">
+      <div v-else-if="lines.length === 0" class="card text-center py-12">
         <p class="text-xl mb-4">No health issues yet</p>
         <AppButton @click="router.push('/issues/new')">
           Create Your First Issue
@@ -59,7 +59,7 @@ const handleDelete = async (lineId: string, event: Event) => {
       </div>
 
       <div v-else class="space-y-4">
-        <GlassCard
+        <Card
           v-for="line in lines"
           :key="line.id"
           hover
@@ -98,7 +98,7 @@ const handleDelete = async (lineId: string, event: Event) => {
               </AppButton>
             </div>
           </div>
-        </GlassCard>
+        </Card>
       </div>
     </div>
   </AppLayout>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import AppLayout from '@/components/layout/AppLayout.vue'
 import AppButton from '@/components/ui/AppButton.vue'
-import GlassCard from '@/components/ui/GlassCard.vue'
+import Card from '@/components/ui/Card.vue'
 import LoadingSpinner from '@/components/ui/LoadingSpinner.vue'
 import { getAPI } from '@/services/mockData'
 import type { LineType } from '@/types'
@@ -38,7 +38,7 @@ onMounted(async () => {
 
       <LoadingSpinner v-if="loading" text="Loading your health issues..." />
 
-      <div v-else-if="lines.length === 0" class="glass-card text-center py-12">
+      <div v-else-if="lines.length === 0" class="card text-center py-12">
         <p class="text-xl mb-4">No health issues yet</p>
         <AppButton @click="router.push('/issues/new')">
           Create Your First Issue
@@ -46,7 +46,7 @@ onMounted(async () => {
       </div>
 
       <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <GlassCard
+        <Card
           v-for="line in lines"
           :key="line.id"
           hover
@@ -68,7 +68,7 @@ onMounted(async () => {
           <div class="flex justify-end">
             <AppButton variant="ghost" size="sm">View Details →</AppButton>
           </div>
-        </GlassCard>
+        </Card>
       </div>
     </div>
   </AppLayout>

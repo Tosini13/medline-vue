@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import AppLayout from '@/components/layout/AppLayout.vue'
 import AppButton from '@/components/ui/AppButton.vue'
-import GlassCard from '@/components/ui/GlassCard.vue'
+import Card from '@/components/ui/Card.vue'
 import LoadingSpinner from '@/components/ui/LoadingSpinner.vue'
 import { getAPI } from '@/services/mockData'
 import type { LineType } from '@/types'
@@ -105,7 +105,7 @@ const handleDelete = async () => {
         </h1>
       </div>
 
-      <GlassCard>
+      <Card>
         <form @submit.prevent="handleSubmit" class="space-y-6">
           <div>
             <label class="label">
@@ -114,7 +114,7 @@ const handleDelete = async () => {
             <input
               v-model="form.title"
               type="text"
-              class="input input-bordered w-full glass"
+              class="input input-bordered w-full "
               required
             />
           </div>
@@ -125,7 +125,7 @@ const handleDelete = async () => {
             </label>
             <textarea
               v-model="form.description"
-              class="textarea textarea-bordered w-full glass"
+              class="textarea textarea-bordered w-full "
               rows="4"
             ></textarea>
           </div>
@@ -169,7 +169,7 @@ const handleDelete = async () => {
             </div>
           </div>
         </form>
-      </GlassCard>
+      </Card>
     </div>
   </AppLayout>
 </template>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AppButton from '@/components/ui/AppButton.vue';
-import GlassCard from '@/components/ui/GlassCard.vue';
+import Card from '@/components/ui/Card.vue';
 import type { LineType } from '@/types';
 import { ref } from 'vue';
 
@@ -35,14 +35,14 @@ const deleteNote = (id: string) => {
 </script>
 
 <template>
-  <GlassCard>
+  <Card>
     <h2 class="text-2xl font-semibold mb-6">Notes</h2>
 
     <!-- Add Note Form -->
     <div class="mb-6">
       <textarea
         v-model="newNote"
-        class="textarea textarea-bordered w-full glass mb-2"
+        class="textarea textarea-bordered w-full  mb-2"
         placeholder="Add a new note..."
         rows="3"
         @keydown.enter.ctrl="addNote"
@@ -61,7 +61,7 @@ const deleteNote = (id: string) => {
       <div
         v-for="note in notes"
         :key="note.id"
-        class="glass-dark p-4 rounded-lg"
+        class="-dark p-4 rounded-lg"
       >
         <div class="flex justify-between items-start mb-2">
           <p class="text-sm text-base-content/70">
@@ -77,6 +77,6 @@ const deleteNote = (id: string) => {
         <p class="whitespace-pre-wrap">{{ note.content }}</p>
       </div>
     </div>
-  </GlassCard>
+  </Card>
 </template>
 

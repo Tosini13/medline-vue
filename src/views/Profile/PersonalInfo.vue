@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AppButton from '@/components/ui/AppButton.vue'
-import GlassCard from '@/components/ui/GlassCard.vue'
+import Card from '@/components/ui/Card.vue'
 import { ref } from 'vue'
 
 const form = ref({
@@ -24,7 +24,7 @@ const handleSave = async () => {
 </script>
 
 <template>
-  <GlassCard>
+  <Card>
     <h2 class="text-2xl font-semibold mb-6">Personal Information</h2>
 
     <form @submit.prevent="handleSave" class="space-y-6">
@@ -36,7 +36,7 @@ const handleSave = async () => {
           <input
             v-model="form.firstName"
             type="text"
-            class="input input-bordered w-full glass"
+            class="input input-bordered w-full "
           />
         </div>
 
@@ -47,7 +47,7 @@ const handleSave = async () => {
           <input
             v-model="form.lastName"
             type="text"
-            class="input input-bordered w-full glass"
+            class="input input-bordered w-full "
           />
         </div>
 
@@ -58,7 +58,7 @@ const handleSave = async () => {
           <input
             v-model="form.email"
             type="email"
-            class="input input-bordered w-full glass"
+            class="input input-bordered w-full "
           />
         </div>
 
@@ -69,7 +69,7 @@ const handleSave = async () => {
           <input
             v-model="form.phone"
             type="tel"
-            class="input input-bordered w-full glass"
+            class="input input-bordered w-full "
           />
         </div>
 
@@ -80,7 +80,7 @@ const handleSave = async () => {
           <input
             v-model="form.dateOfBirth"
             type="date"
-            class="input input-bordered w-full glass"
+            class="input input-bordered w-full "
           />
         </div>
       </div>
@@ -91,7 +91,7 @@ const handleSave = async () => {
         </label>
         <textarea
           v-model="form.address"
-          class="textarea textarea-bordered w-full glass"
+          class="textarea textarea-bordered w-full "
           rows="2"
         ></textarea>
       </div>
@@ -102,6 +102,6 @@ const handleSave = async () => {
         </AppButton>
       </div>
     </form>
-  </GlassCard>
+  </Card>
 </template>
 

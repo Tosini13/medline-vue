@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import GlassCard from '@/components/ui/GlassCard.vue'
+import Card from '@/components/ui/Card.vue'
 import LoadingSpinner from '@/components/ui/LoadingSpinner.vue'
 import { getAPI } from '@/services/mockData'
 import type { EventType, LineType } from '@/types'
@@ -41,31 +41,31 @@ const upcomingEvents = computed(() => {
 <template>
   <div class="space-y-6">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <GlassCard>
+      <Card>
         <div class="text-center">
           <div class="text-4xl font-bold text-primary">{{ events.length }}</div>
           <div class="text-base-content/70 mt-2">Total Events</div>
         </div>
-      </GlassCard>
-      <GlassCard>
+      </Card>
+      <Card>
         <div class="text-center">
           <div class="text-4xl font-bold text-info">{{ upcomingEvents.length }}</div>
           <div class="text-base-content/70 mt-2">Upcoming Events</div>
         </div>
-      </GlassCard>
-      <GlassCard>
+      </Card>
+      <Card>
         <div class="text-center">
           <div class="text-4xl font-bold text-accent">
             {{ events.filter(e => e.documents && e.documents.length > 0).length }}
           </div>
           <div class="text-base-content/70 mt-2">Documents</div>
         </div>
-      </GlassCard>
+      </Card>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
       <!-- Recent Events -->
-      <GlassCard>
+      <Card>
         <h2 class="text-2xl font-semibold mb-4">Recent Events</h2>
         <LoadingSpinner v-if="loading" size="sm" />
         <div v-else-if="recentEvents.length === 0" class="text-center py-8 text-base-content/70">
@@ -75,7 +75,7 @@ const upcomingEvents = computed(() => {
           <div
             v-for="event in recentEvents"
             :key="event.id"
-            class="p-4 glass-dark rounded-lg"
+            class="p-4 -dark rounded-lg"
           >
             <div class="flex justify-between items-start mb-2">
               <h3 class="font-semibold">{{ event.title }}</h3>
@@ -86,10 +86,10 @@ const upcomingEvents = computed(() => {
             <p class="text-sm text-base-content/70">{{ event.description }}</p>
           </div>
         </div>
-      </GlassCard>
+      </Card>
 
       <!-- Upcoming Events -->
-      <GlassCard>
+      <Card>
         <h2 class="text-2xl font-semibold mb-4">Upcoming Events</h2>
         <LoadingSpinner v-if="loading" size="sm" />
         <div v-else-if="upcomingEvents.length === 0" class="text-center py-8 text-base-content/70">
@@ -99,7 +99,7 @@ const upcomingEvents = computed(() => {
           <div
             v-for="event in upcomingEvents"
             :key="event.id"
-            class="p-4 glass-dark rounded-lg"
+            class="p-4 -dark rounded-lg"
           >
             <div class="flex justify-between items-start mb-2">
               <h3 class="font-semibold">{{ event.title }}</h3>
@@ -110,7 +110,7 @@ const upcomingEvents = computed(() => {
             <p class="text-sm text-base-content/70">{{ event.description }}</p>
           </div>
         </div>
-      </GlassCard>
+      </Card>
     </div>
   </div>
 </template>

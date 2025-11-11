@@ -3,7 +3,7 @@ import { computed } from 'vue';
 
 const props = withDefaults(
   defineProps<{
-    variant?: 'primary' | 'secondary' | 'accent' | 'ghost' | 'outline' | 'glass' | 'error'
+    variant?: 'primary' | 'secondary' | 'accent' | 'ghost' | 'outline' | 'error'
     size?: 'xs' | 'sm' | 'md' | 'lg'
     loading?: boolean
     disabled?: boolean
@@ -21,13 +21,12 @@ const props = withDefaults(
 const buttonClasses = computed(() => {
   const base = 'btn transition-all duration-200'
   const variantClasses = {
-    primary: 'btn-primary glass',
-    secondary: 'btn-secondary glass',
-    accent: 'btn-accent glass',
+    primary: 'btn-primary',
+    secondary: 'btn-secondary ',
+    accent: 'btn-accent ',
     ghost: 'btn-ghost',
     outline: 'btn-outline',
-    glass: 'glass border-white/20 hover:bg-white/20',
-    error: 'btn-error glass',
+    error: 'btn-error ',
   }
   const sizeClasses = {
     xs: 'btn-xs',

@@ -25,7 +25,7 @@ const isActive = (path: string) => {
 <template>
   <div class="min-h-screen flex flex-col">
     <!-- Header -->
-    <header class="glass border-b border-white/20 sticky top-0 z-50">
+    <header class="border-b border-white/20 sticky top-0 z-50 bg-base-100">
       <div class="container mx-auto px-4 py-4">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-4">
@@ -51,7 +51,7 @@ const isActive = (path: string) => {
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               </div>
-              <ul tabindex="0" class="dropdown-content menu glass-card mt-3 w-52 p-2 shadow-xl z-[1]">
+              <ul tabindex="0" class="dropdown-content menu card mt-3 w-52 p-2 shadow-x z-[1]">
                 <li v-for="item in navigation" :key="item.path">
                   <a
                     :class="{ active: isActive(item.path) }"
@@ -74,7 +74,7 @@ const isActive = (path: string) => {
     </main>
 
     <!-- Footer -->
-    <footer class="glass border-t border-white/20 mt-auto">
+    <footer class=" border-t border-white/20 mt-auto">
       <div class="container mx-auto px-4 py-4 text-center text-sm opacity-70">
         <p>© 2024 Medline. Your health companion.</p>
       </div>
@@ -83,7 +83,7 @@ const isActive = (path: string) => {
 </template>
 
 <style scoped>
-@reference "tailwindcss";
+  @reference "../../assets/main.css";
 .active {
   @apply bg-primary text-primary-content;
 }
